@@ -1,5 +1,50 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useRef } from "react";
+
 const GsapScrollTrigger = () => {
-  // TODO: Implement the gsap scroll trigger
+  gsap.registerPlugin(ScrollTrigger);
+
+  const leftRef = useRef();
+  const rightRef = useRef();
+
+  useGSAP(() => {
+    const leftBoxes = gsap.utils.toArray(leftRef.current.children);
+    const rightBoxes = gsap.utils.toArray(rightRef.current.children);
+
+    leftBoxes.forEach((box) => {
+      gsap.to(box, {
+        x: 700,
+        rotation: 360,
+        borderRadius: "100%",
+        scale: 1.5,
+        scrollTrigger: {
+          trigger: box,
+          start: "bottom bottom",
+          end: "top 20%",
+          scrub: true,
+        },
+        ease: "power1.inOut",
+      });
+    });
+
+    rightBoxes.forEach((box) => {
+      gsap.to(box, {
+        x: -350,
+        rotation: -360,
+        borderRadius: "100%",
+        scale: 1.5,
+        scrollTrigger: {
+          trigger: box,
+          start: "bottom bottom",
+          end: "top 20%",
+          scrub: true,
+        },
+        ease: "power1.inOut",
+      });
+    });
+  }, {scope: rightRef});
 
   return (
     <main>
@@ -10,30 +55,10 @@ const GsapScrollTrigger = () => {
         that are triggered by the scroll position of the page.
       </p>
 
-      <p className="mt-5 text-gray-500">
-        With ScrollTrigger, you can define various actions to be triggered at
-        specific scroll points, such as starting or ending an animation,
-        scrubbing through animations as the user scrolls, pinning elements to
-        the screen, and more.{" "}
-      </p>
-
-      <p className="mt-5 text-gray-500">
-        Read more about the{" "}
-        <a
-          href="https://gsap.com/docs/v3/Plugins/ScrollTrigger/"
-          target="_blank"
-          rel="noreferrer noopener nofollow"
-        >
-          gsap scroll trigger
-        </a>{" "}
-        method.
-      </p>
-
       <div className="w-full h-[70vh] flex justify-center items-center flex-col">
         <p className="text-center text-gray-500">
           Scroll down to see the animation
         </p>
-
         <svg
           className="animate-bounce mt-5"
           xmlns="http://www.w3.org/2000/svg"
@@ -51,16 +76,19 @@ const GsapScrollTrigger = () => {
         </svg>
       </div>
 
-      <div className="mt-20 w-full h-screen">
-        <div
-          id="scroll-pink"
-          className="scroll-box w-20 h-20 rounded-lg bg-pink-500"
-        />
-        <div
-          id="scroll-orange"
-          className="scroll-box w-20 h-20 rounded-lg bg-orange-500"
-        />
+<div className="flex justify-between">
+        {/* Left side boxes */}
+      <div className="mt-20 w-full h-screen flex gap-5 justify-center" ref={leftRef}>
+        <div className="scroll-box w-20 h-20 rounded-lg bg-pink-500" />
+        <div className="scroll-box w-20 h-20 rounded-lg bg-orange-500" />
       </div>
+
+      {/* Right side boxes with mirrored animation */}
+      <div className="mt-20 w-full h-screen flex gap-5 justify-center" ref={rightRef}>
+        <div className="scroll-box w-20 h-20 rounded-lg bg-blue-500" />
+        <div className="scroll-box w-20 h-20 rounded-lg bg-green-500" />
+      </div>
+</div>
     </main>
   );
 };

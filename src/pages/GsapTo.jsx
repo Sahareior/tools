@@ -1,5 +1,67 @@
+import {useGSAP} from "@gsap/react"
+import gsap from "gsap";
+
 const GsapTo = () => {
   // TODO: Implement the gsap.to() method
+
+  // useGSAP(()=>{
+  //   gsap.from('#blue-box', {
+  //     c:250,
+  //     repeat: -1,
+  //     yoyo:true,
+  //     rotation: 260,
+  //     duration:2,
+  //     ease: 'back.out'
+  //   })
+  // },[])
+
+//   useGSAP(()=>{
+//     gsap.fromTo('#blue-box', {
+//       x:0,
+//       // repeat: -1,
+//       borderRadius: '0%',
+//       // yoyo:true,
+//       rotation: 260,
+//       // duration:2,
+//       // ease: 'back.out'
+//     },{
+// x: 250,
+// repeat: -1,
+// yoyo: true,
+// rotation: 360,
+// borderRadius: '100%',
+// duration: 3,
+// ease: 'expo.in'
+//     })
+//   },[])
+
+
+const timeline = gsap.timeline({
+  repeat: -1, repeatDelay: 1, yoyo: true
+});
+
+
+useGSAP(()=>{
+timeline.to('#blue-box', {
+  x: 250,
+  rotation: 360,
+  borderRadius: '100%',
+  duration: 2,
+  ease: 'back.inOut'
+})
+timeline.to('#blue-box', {
+  x: 500,
+  scale:1,
+  rotation: 360,
+  borderRadius: '10%',
+  duration: 2,
+  ease: 'back.inOut'
+})
+},[])
+
+
+
+
 
   return (
     <main>
