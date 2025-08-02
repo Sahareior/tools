@@ -14,11 +14,18 @@ import Navbar from "./pages/Navbar";
 import Hero from "./pages/Hero";
 import AboutUs from "./pages/AboutUs";
 import Certificate from "./pages/Certificate";
+import CustomSteps from "./pages/CustomSteps";
 
 const App = () => {
   return (
     <div className="bg-black  w-full">
-<Certificate />
+{/* <Certificate /> */}
+
+{/* <Navbar />
+<Hero />
+<AboutUs /> */}
+
+<CustomSteps />
     </div>
   );
 };

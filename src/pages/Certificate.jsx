@@ -33,7 +33,7 @@ const Certificate = () => {
   </div>
 
   {/* Certificate Display */}
-  <div className="cert-container print-m-0 flex justify-center">
+  <div className="cert-container hidden nonee print-m-0 flex justify-center">
     <div
       id="content2"
       ref={certificateRef}
@@ -73,7 +73,7 @@ const Certificate = () => {
         </p>
 
         {/* Footer Row */}
-        <div className="absolute bottom-10 w-full flex justify-between px-16 text-sm font-medium text-gray-800">
+        <div className="absolute bottom-[100px] w-full flex justify-between px-24 text-sm font-medium text-gray-800">
           <span>📍 G-1 DAPE-ARR-SF</span>
           <span>📅 Completed on: April 3, 2020</span>
         </div>

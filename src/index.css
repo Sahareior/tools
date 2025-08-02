@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+body{
+  background-color: white;
+}
+
+.bg-black {
+  background-color: white;
+}
+
+/* @layer components {
   code {
     @apply font-mono text-sm bg-zinc-900 text-orange-400 p-1
   }
@@ -131,4 +139,4 @@ small {
 
 .ml-215 {
   margin-left: 215px;
-}
+} */
