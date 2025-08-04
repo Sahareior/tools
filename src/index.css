@@ -2,141 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: white;
-}
 
-.bg-black {
-  background-color: white;
-}
-
-/* @layer components {
-  code {
-    @apply font-mono text-sm bg-zinc-900 text-orange-400 p-1
-  }
-
-  h1 {
-    @apply text-3xl font-bold text-zinc-50
-  }
-
-  main {
-    @apply mx-auto max-w-3xl ring-1 bg-zinc-900 ring-zinc-300/20 xl:max-w-5xl min-h-screen p-10
-  }
-
-  a {
-    @apply text-blue-400 hover:text-blue-500
-  }
-
-  button {
-    @apply bg-slate-500 hover:bg-slate-600 text-zinc-50 px-4 py-2 rounded-md
-  }
-}
-
-@layer utilities {
-  .container {
-    @apply mx-auto max-w-3xl ring-1 bg-zinc-900 ring-zinc-300/20 xl:max-w-5xl min-h-screen p-10
-  }
-}
-
-    video {
-        @apply w-full h-full absolute bottom-0 left-0 object-contain object-bottom ;
-    }
-
-
-
-    * {
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-@media print{
-  .no-print, .no-print *{
-    display: none !important;
-  } 
-  .print-m-0{
-    margin: 0 !important;
+:root {
+  --backgroundColor: #FEF852;
+  --backgroundColorSecondary: #FFFC94;
+  --textPrimaryColor: #2A2A2A;
+
+  --headlineBig: clamp(3rem, 10vw, 15rem);
+  --headlineSmall: clamp(1rem, 1.2vw, 6rem);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--backgroundColor);
+}
+
+.reveal {
+  background: var(--backgroundColor);
+  padding-left: 30%;
+  padding-right: 10%;
+}
+
+.reveal-text {
+  font-weight: 800;
+  font-size: 90px;
+  color: var(--backgroundColor);
+  filter: drop-shadow(0 0 0.06rem rgb(2, 2, 2));
+}
+
+.spacing-small {
+margin-top: 20rem;
+}
+
+.spacing {
+  height: 100vh;
+}
+
+@media screen and (max-width: 500px) {
+  .reveal {
+    padding-left: 10px;
   }
-} 
-
-.btn{
-  padding: 10px 17px; 
-  border-radius: 3px; 
-  background: #f4b71a; 
-  border: none; 
-  font-size: 12px; 
-  margin: 10px 5px;
 }
 
-.toolbar{
-  background: #333; 
-  width: 100vw; 
-  position: fixed; 
-  left: 0; 
-  top: 0; 
-  text-align: center;
+.section-1{
+background-color: #fadadd;
+background-image: linear-gradient(148deg, #fadadd 0%, #fc9ead 74%);
 }
 
-.cert-container {
-  margin:65px 0 10px 0; 
-  width: 100%; 
-  display: flex; 
-  justify-content: center;
+/* Add this to your CSS to prevent layout shifts during animation */
+.donut {
+  will-change: transform;
 }
 
-.cert {
-  width:800px; 
-  height:600px; 
-  padding:15px 20px; 
-  text-align:center; 
-  position: relative; 
-  z-index: -1;
+/* Add this to your global CSS or tailwind.config.css for a glow */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.cert-bg {
-  position: absolute; 
-  left: 0px; 
-  top: 0; 
-  z-index: -1;
-  width: 100%;
+@keyframes text-glow {
+  0% { text-shadow: 0 0 10px rgba(34, 211, 238, 0.5); }
+  50% { text-shadow: 0 0 30px rgba(192, 38, 211, 0.8); }
+  100% { text-shadow: 0 0 10px rgba(34, 211, 238, 0.5); }
 }
 
-.cert-content {
-  width:750px; 
-  height:470px; 
-  padding:70px 60px 0px 60px; 
-  text-align:center;
-  font-family: Arial, Helvetica, sans-serif;
-  
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  70% { transform: scale(1.1); opacity: 0; }
+  100% { transform: scale(1.1); opacity: 0; }
 }
 
-h1 {
-  font-size:44px;
+@keyframes float-particles {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
 }
 
-p {
-  font-size:25px;
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
 }
 
-small {
-  font-size: 14px;
-  line-height: 12px;
+.animate-text-glow {
+  animation: text-glow 3s ease infinite;
 }
 
-.bottom-txt {
-  padding: 12px 5px; 
-  display: flex; 
-  justify-content: space-between;
-  font-size: 16px;
+.animate-text-glow-delay {
+  animation: text-glow 3s ease infinite 0.5s;
 }
 
-.bottom-txt * {
-  white-space: nowrap !important;
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.other-font {
-  font-family: Cambria, Georgia, serif;
-  font-style: italic;
+.animate-float-particles {
+  animation: float-particles 20s linear infinite;
 }
-
-.ml-215 {
-  margin-left: 215px;
-} */

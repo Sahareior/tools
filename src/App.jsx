@@ -15,6 +15,8 @@ import Hero from "./pages/Hero";
 import AboutUs from "./pages/AboutUs";
 import Certificate from "./pages/Certificate";
 import CustomSteps from "./pages/CustomSteps";
+import TextScrollTrigger from "./pages/TextScrollTrigger";
+import OpScroll from "./Components/OpScroll";
 
 const App = () => {
   return (
@@ -25,7 +27,10 @@ const App = () => {
 <Hero />
 <AboutUs /> */}
 
-<CustomSteps />
+{/* <CustomSteps /> */}
+
+{/* <TextScrollTrigger />  */}
+< OpScroll />
     </div>
   );
 };
