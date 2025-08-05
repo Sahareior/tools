@@ -17,6 +17,8 @@ import Certificate from "./pages/Certificate";
 import CustomSteps from "./pages/CustomSteps";
 import TextScrollTrigger from "./pages/TextScrollTrigger";
 import OpScroll from "./Components/OpScroll";
+import OpHero from "./Components/OpHomepage/OpHero";
+import CustomSwiper from "./Components/CustomSwiper";
 
 const App = () => {
   return (
@@ -30,7 +32,9 @@ const App = () => {
 {/* <CustomSteps /> */}
 
 {/* <TextScrollTrigger />  */}
-< OpScroll />
+{/* < OpScroll /> */}
+{/* <OpHero /> */}
+<CustomSwiper />
     </div>
   );
 };

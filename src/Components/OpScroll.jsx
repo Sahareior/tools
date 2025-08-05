@@ -62,7 +62,7 @@ useGSAP(() => {
         rotate: -360,
         ease: 'none',
         duration: 1,
-        immediateRender: false
+        // immediateRender: false
       };
 
       const tl = gsap.timeline({
